@@ -1,0 +1,31 @@
+<h1><%= @sport.title %></h1>
+
+
+
+<ul>
+  <li><%= link_to "Edit", edit_sport_path(@sport) %></li>
+</ul>
+
+<h2>Teams</h2>
+<% @sport.teams.each do |team| %>
+  <p>
+    <strong>Name:</strong>
+    <%= link_to team.name, sport_team_path(@sport, team) %>
+  </p>
+
+<% end %>
+
+
+<h2>Add a team:</h2>
+<%= form_with model: [ @sport, @sport.teams.build ] do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+

@@ -1,0 +1,39 @@
+
+<!--<h2>Players</h2>-->
+<%# @sport.teams.players.each do |team| %>
+<!--  <p>-->
+<!--    <strong>Name:</strong>-->
+    <%#= link_to team.name, sport_team_player_path(@team, player) %>
+<!--  </p>-->
+
+<%# end %>
+
+<!--<h2>Add a player:</h2>-->
+<%#= form_with model: :player, url:  new_sport_team_player_path(@team), method: :post, local: true do |form| %>
+<!--  <p>-->
+<!--    <%#= form.label :name %><br>-->
+    <%#= form.text_field :name %>
+<!--  </p>-->
+
+<!--  <p>-->
+    <%#= form.submit %>
+<!--  </p>-->
+
+<%# end %>
+
+<!--<h2>Add a team:</h2>-->
+<%#= form_with model: :player, url: sport_team_player_url(@team), method: :post, local: true do |form| %>
+<!--  <p>-->
+<!--    <%#= form.label :name %><br>-->
+    <%#= form.text_field :name %>
+<!--  </p>-->
+
+<!--  <p>-->
+    <%#= form.submit %>
+<!--  </p>-->
+
+<%# end %>
+
+<ul>
+  <li><%= link_to "Add Player", new_sport_team_player_path(@sport, @team) %></li>
+</ul>
